@@ -1,0 +1,155 @@
+.container {
+  padding: 16px;
+  margin: 0 auto;
+  max-width: 768px;
+
+  @media (min-width: 600px) {
+    max-width: 1228px;
+  }
+}
+
+.searchBarContainer {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.input {
+  width: 100%;
+  padding: 12px 40px 12px 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background: #fff url('./images/icon/search.svg') no-repeat 12px center;
+  background-size: 20px;
+  font-size: 16px;
+  color: #333;
+  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease-in-out,
+    box-shadow 0.2s ease-in-out;
+
+  &:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+    outline: none;
+    background-color: #fff;
+
+    &::placeholder {
+      color: #888;
+    }
+  }
+
+  &::placeholder {
+    color: #aaa;
+    opacity: 1;
+  }
+
+  &.inputEmptyUnfocused {
+    background-color: #f0f0f0;
+    border-color: #ddd;
+    &::placeholder {
+      color: #999;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 10px 35px 10px 35px;
+    font-size: 15px;
+    background-size: 18px;
+    background-position: 10px center;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 18px;
+  }
+}
+
+.clearButton {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  line-height: 1;
+  border: none;
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: transparent;
+  background-image: url('./images/icon/close.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: 14px 14px;
+
+  filter: brightness(0) saturate(100%);
+
+  @media (max-width: 600px) {
+    width: 26px;
+    height: 26px;
+    background-size: 12px 12px;
+    right: 8px;
+  }
+}
+.breedList {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.breedItem {
+  display: flex;
+  align-items: center;
+  padding: 12px;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+  transition: background 0.2s ease;
+
+  &:hover {
+    background: #f9f9f9;
+  }
+
+  @media (max-width: 480px) {
+    padding: 8px;
+  }
+}
+
+.avatarContainer {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  background-color: #ccc;
+  flex-shrink: 0;
+  margin-right: 16px;
+
+  @media (max-width: 480px) {
+    width: 40px;
+    height: 40px;
+    margin-right: 12px;
+  }
+}
+
+.breedAvatar {
+  object-fit: cover;
+}
+.breedLink {
+  color: #2b2b2b;
+  text-decoration: none;
+  &:hover {
+    color: #0090eb;
+  }
+}
+
+.breedName {
+  font-size: 16px;
+  color: #333;
+
+  @media (max-width: 480px) {
+    font-size: 15px;
+  }
+}
